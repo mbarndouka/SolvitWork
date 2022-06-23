@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+</head>
+<body>
+    <section clqss="sign">
+        <div class="sign--head">
+            <div class="sign--head--logo">
+                <svg viewBox="0 0 166 34" xmls="http://www.w3.org/2000/svg"><path></path></svg>
+            </div>
+            <h1 class="sign--title">Sign In</h1>
+            <p class="signup-message">New to GoDaddy?</p>
+        </div>
+        <form class="sign--form" autocomplete="off" method="post">
+            <div class="form-element">
+                <input id="password_input" class="form-element--input" type="password" required/>
+                <label class="form-element--label" for="password_input">password</label>
+                <span class="form-element--error-message"> This field is required</span>
+            </div>
+            <div>
+                <input id="keep_signed_in" type="checkbox" name="keep_signed_in"/>
+                <label for="keep_signed_in">Keep me signed in on this device</label>
+            </div>
+            <button type="submit" class="signin-button">Sign in</button>
+        </form>
+        <div class="form-footer">
+            <p class="form-footer--description"> or sign in with</p>
+            <div class="social-network">
+                <button class="social-network--item">
+                    <svg fill="#000000" xmlns="www.w3.org/2000/svg" viewBox="0 0 30 30" width="30px" height="30px"><path></path></svg>
+                    <span>Google</span>
+                </button>
+            </div>
+            <p class="form-footer--description"> Need to find<a href="">your username</a> or <a href="">your password</a>?</p>
+        </div>
+    </section>
+    <script>
+        const onInputHandler = (evt)=> {
+            const value = evt.target.value;
+            if(value != "") evt.target.classList.add("input-with-value");
+            else evt.target.classList.remove("input-with-value")
+        }
+        const formInputHandler = document.querySelectorAll(".form-element--input");
+        formInputElement.forEach(element => {
+           element.oninput = onInputHandler;
+        });
+    </script>
+</body>
+</html>
